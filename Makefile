@@ -108,7 +108,6 @@ setup:
 	mkdir -p "${LOG_DIR}"
 	ln -nsrf "${BDIR}" build
 	ln -nsrf cp2m5 "${M5DIR}"
-
 clean:
 	# clear all intermediate files
 	rm parsetab.py **/*.pyc

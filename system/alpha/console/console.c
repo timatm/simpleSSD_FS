@@ -1061,7 +1061,7 @@ SlaveLoop(int cpu)
         ((ulong)rpb_percpu + size * cpu);
 
     if (cpu == 0) {
-        panic("CPU 0 entering slaveLoop. Reenetering the console. HOSED\n");
+        panic("CPUï¿½0 entering slaveLoop. Reenetering the console. HOSED\n");
     } else {
         printf_lock("Entering slaveloop for cpu %d my_rpb=%x\n", cpu, my_rpb);
     }
