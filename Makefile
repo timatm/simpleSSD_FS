@@ -111,3 +111,8 @@ setup:
 clean:
 	# clear all intermediate files
 	rm parsetab.py **/*.pyc
+
+pull:
+	@echo "Pulling main repo and all submodules recursively..."
+	git pull
+	git submodule update --remote --recursive
