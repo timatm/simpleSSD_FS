@@ -11,7 +11,7 @@ export M5_PATH=${M5DIR}
 # ISA configs
 ISA 	:= X86
 
-DISK_EX	:= ${M5DIR}/disks/nvme.img
+DISK_EX	:= ${M5DIR}/disks/disk.img
 
 ifeq (${ISA},X86)
 KERNEL	:= x86_64-vmlinux-4.9.92
