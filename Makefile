@@ -118,15 +118,15 @@ pull:
 	git pull --recurse-submodules
 	@echo "🔄 Updating all submodules to latest of their branches..."
 	git submodule update --remote --recursive
-	@echo "🔍 Checking submodule branch status..."
-	@git submodule foreach '\
+	@echo "🔍 Checking all submodule branch status (recursive)..."
+	@git submodule foreach --recursive '\
 		echo "\n📂 Entering submodule: $$name"; \
 		current_branch=$$(git symbolic-ref --short -q HEAD || echo "DETACHED"); \
 		echo "   ↪ Branch: $$current_branch"; \
-		remote_branch=$$(git for-each-ref --format="%(upstream:short)" refs/heads/$$current_branch); \
 		if [ "$$current_branch" = "DETACHED" ]; then \
 			echo "   ⚠️  Detached HEAD"; \
 		else \
+			remote_branch=$$(git for-each-ref --format="%(upstream:short)" refs/heads/$$current_branch); \
 			git remote update > /dev/null 2>&1; \
 			status=$$(git rev-list --left-right --count $$remote_branch...HEAD 2>/dev/null); \
 			[ -z "$$status" ] && echo "   ❓ No upstream tracking branch" || \
