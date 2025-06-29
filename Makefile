@@ -16,6 +16,7 @@ DISK_EX	:= ${M5DIR}/disks/disk.img
 ifeq (${ISA},X86)
 KERNEL	:= x86_64-vmlinux-4.9.92
 DISK	:= ${M5DIR}/disks/x86root.img ${DISK_EX}
+
 else
 KERNEL	:= aarch64-vmlinux-4.9.92
 DISK	:= ${M5DIR}/disks/linaro-aarch64-linux.img
@@ -115,4 +116,4 @@ clean:
 pull:
 	@echo "Pulling main repo and all submodules recursively..."
 	git pull
-	git submodule update --remote --recursive
+	git submodule update --recursive

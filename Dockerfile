@@ -1,5 +1,5 @@
 # BUILD: `docker build --build-arg UID=$(id -u) --build-arg GID=$(id -g) -f $THIS_FILE -t $IMAGE_NAME .`
-# USAGE: `docker run --rm -v $HOST_SIMPLESSD_PATH:/ws -w /ws -u $(id -u):$(id -g) -it $IMAGE_NAME tmux`
+# USAGE: `docker run --name simplessd -v $HOST_SIMPLESSD_PATH:/ws -w /ws -u $(id -u):$(id -g) -it $IMAGE_NAME tmux`
 
 FROM ubuntu:18.04
 
