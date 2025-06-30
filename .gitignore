@@ -35,8 +35,6 @@ cp2m5
 .clang_complete
 .clang-format
 *.cfg
-*.sh
-scripts/
 compile_flags.txt
 .vscode/
 *code-workspace
